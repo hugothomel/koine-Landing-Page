@@ -1,17 +1,17 @@
-import ic_money_send from '../../../../public/svgs/ic_money_send.svg';
-import ic_wallet_minus from '../../../../public/svgs/ic_wallet_minus.svg';
+import ic_figma from '../../../../public/svgs/figma_icon.svg';
+import ic_notion from '../../../../public/svgs/notion_icon.svg';
 export const cardsInfo = [
   {
     title: 'Create Better',
     details:
       'Import your Figma designs, enrich them with flows and interactions, then export back to Figma seamlessly.',
-    icon: ic_money_send,
+    icon: ic_figma,
   },
   {
     title: 'Collaborate Better',
     details:
       'Generate interactive prototypes with documentation and development tickets ready to be assigned, all from your design system.',
-    icon: ic_wallet_minus,
+    icon: ic_notion,
   },
 ];
 

@@ -77,10 +77,11 @@ export const TextCtn = styled.div`
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.75rem;
+    color: white;
   }
 
   p {
-    color: var(--link-color);
+    color: white;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.75rem;
@@ -107,14 +108,21 @@ export const SVGCtn = styled.div`
   display: grid;
   place-items: center;
 
+  img {
+    width: 12rem;
+    height: 12rem;
+    filter: brightness(0) invert(1);
+  }
+
   @media (max-width: 768px) {
     height: 15.28219rem;
     background-position: center center;
     background-size: contain;
 
     img {
-      width: 7.5rem;
-      height: 7.5rem;
+      width: 10rem;
+      height: 10rem;
+      filter: brightness(0) invert(1);
     }
   }
 `;
