@@ -66,13 +66,13 @@ const FinancialFuture = () => {
           ))}
         </Stats>
       </Inner>
-      <Banner>
+      {/* <Banner>
         {isMobile ? (
           <Image src={future_mobile_banner} alt="future_banner" fill />
         ) : (
           <Image src={future_banner} alt="future_banner" fill />
         )}
-      </Banner>
+      </Banner> */}
     </Wrapper>
   );
 };
