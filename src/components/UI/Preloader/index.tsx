@@ -115,25 +115,27 @@ const Preloader = ({
       duration: 1.4,
     })
     
-    // Immediately transition to main page when cog stops spinning
+    // Dynamic radial reveal transition to main page
     .to([wrapperRef.current, secondOverlayRef.current], {
-      scaleY: 0,
-      transformOrigin: 'top',
-      ease: 'back.out(1.7)',
-      duration: 1,
-      stagger: 0.2,
+      clipPath: 'circle(0% at 50% 50%)',
+      rotation: 5,
+      scale: 1.1,
+      ease: 'power4.inOut',
+      duration: 1.2,
+      stagger: 0.15,
       onComplete: () => {
         setComplete(true);
       },
     })
 
-    // Fine-tune the second overlay timing
+    // Enhanced second overlay with spiral effect
     .to(secondOverlayRef.current, {
-      scaleY: 0,
-      transformOrigin: 'top',
-      ease: [0.83, 0, 0.17, 1] as any,
+      clipPath: 'circle(0% at 50% 50%)',
+      rotation: -10,
+      scale: 0.95,
+      ease: 'expo.inOut',
       duration: 1,
-      delay: -0.9,
+      delay: -1.05,
     });
 
     // Add cursor follow effect (optional enhancement)

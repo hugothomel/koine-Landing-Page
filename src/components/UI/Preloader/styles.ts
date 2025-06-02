@@ -17,6 +17,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   perspective: 1000px;
   overflow: hidden;
+  clip-path: circle(100% at 50% 50%);
+  will-change: clip-path, transform;
 `;
 
 export const Inner = styled.div`
@@ -169,4 +171,6 @@ export const SecondOverlay = styled.div`
   
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  clip-path: circle(100% at 50% 50%);
+  will-change: clip-path, transform;
 `;
