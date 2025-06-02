@@ -2,8 +2,8 @@
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: var(--Background);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text-primary);
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -19,15 +19,15 @@ export const Wrapper = styled.div`
 
 export const Inner = styled.div`
   display: flex;
-  gap: 2em;
+  gap: 32px;
   align-items: center;
-  padding: 0 2em;
+  padding: 0 32px;
   overflow: hidden;
-  height: 20em;
+  height: 320px;
 
   img {
-    width: 25em;
-    height: 25em;
+    width: 400px;
+    height: 400px;
   }
 
   div {
@@ -36,29 +36,31 @@ export const Inner = styled.div`
     align-items: center;
 
     div {
+      font-family: 'PP Mori', 'Inter', sans-serif;
       font-weight: 600;
-      font-size: 25em;
+      font-size: 400px;
+      color: var(--primary);
     }
   }
 
   @media (max-width: 768px) {
-    gap: 1rem;
-    height: 13rem;
+    gap: 16px;
+    height: 208px;
     img {
-      width: 7rem;
+      width: 112px;
       height: 100%;
     }
 
     div {
       div {
-        font-size: 6rem;
+        font-size: 96px;
       }
     }
   }
 `;
 
 export const SecondOverlay = styled.div`
-  background: var(--emerald);
+  background: var(--primary);
   position: fixed;
   height: 100vh;
   width: 100vw;

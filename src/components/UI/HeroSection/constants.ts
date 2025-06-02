@@ -11,3 +11,16 @@ export const mobileParagraphPhrases = [
   "Experience the future of banking with RAFT. We're",
   'here to empower your financial journey.',
 ];
+
+export const desktopHeaderPhrase = [
+  "Experience the future of banking with Koïnè. We're here to",
+  'empower your financial journey.',
+];
+
+export const desktopParagraphPhrase = "Experience the future of banking with Koïnè.";
+
+export const mobileHeaderPhrase = [
+  "Experience the future of banking with Koïnè. We're",
+  'here to empower your',
+  'financial journey.',
+];

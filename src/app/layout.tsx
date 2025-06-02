@@ -3,8 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Raft',
-  description: 'Building the future of banking',
+  title: 'Koïnè',
+  description: 'Experience the future of banking with Koïnè',
 };
 
 export default function RootLayout({

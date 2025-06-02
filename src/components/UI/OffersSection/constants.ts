@@ -45,3 +45,27 @@ export const offers = [
       'Achieve your financial dreams with our comprehensive financial planning services, guiding you toward a secure future.',
   },
 ];
+
+export const TITLE = {
+  desktop: {
+    phrase: ['A suite of products catering to', 'every financial need'],
+  },
+  mobile: {
+    phrase: ['Journey with Koïnè'],
+  },
+};
+
+export const DESCRIPTION = {
+  desktop: {
+    phrase: [
+      'Koïnè offers a world of financial possibilities. From investments to payments,',
+      "we've got you covered.",
+    ],
+  },
+  mobile: {
+    phrase: [
+      'Koïnè offers a world of financial possibilities. From',
+      "investments to payments, we've got you covered.",
+    ],
+  },
+};

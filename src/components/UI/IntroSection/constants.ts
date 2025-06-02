@@ -3,17 +3,17 @@ import ic_identification from '../../../../public/svgs/ic_identification.svg';
 import ic_lock_closed from '../../../../public/svgs/ic_lock_closed.svg';
 
 // For desktop
-export const desktopHeaderPhrase = ["Introducing RAFT's Next-", 'Gen Cards'];
+export const desktopHeaderPhrase = ["Introducing Koïnè's Next-", 'Gen Cards'];
 export const desktopParagraphPhrase = [
-  " Discover RAFT's latest innovation – our new cards. Elevate your banking",
+  " Discover Koïnè's latest innovation – our new cards. Elevate your banking",
   'experience with cutting-edge features, security, and unprecedented',
   'convenience.',
 ];
 
 // For mobile
-export const mobileHeaderPhrase = ["Introducing RAFT's", 'Next-Gen Cards'];
+export const mobileHeaderPhrase = ["Introducing Koïnè's", 'Next-Gen Cards'];
 export const mobileParagraphPhrase = [
-  " Discover RAFT's latest innovation – our new cards.",
+  " Discover Koïnè's latest innovation – our new cards.",
   ' Elevate your banking experience with cutting-edge',
   'features, security, and unprecedented',
   'convenience.',

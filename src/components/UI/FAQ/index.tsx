@@ -16,7 +16,7 @@ import { useIsMobile } from '../../../../libs/useIsMobile';
 import {
   animate,
   desktopHeaderPhrase,
-  faqData,
+  faq_data,
   mobileHeaderPhrase,
 } from './constants';
 
@@ -45,7 +45,7 @@ const FAQ = () => {
           <MaskText phrases={desktopHeaderPhrase} tag="h1" />
         )}
         <Accordion ref={accordionRef}>
-          {faqData.map((item, index) => (
+          {faq_data.map((item, index) => (
             <AccordionItem
               variants={animate}
               initial="initial"

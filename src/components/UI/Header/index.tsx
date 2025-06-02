@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import {
   Wrapper,
@@ -8,23 +9,32 @@ import {
   Nav,
   CallToActions,
   AbsoluteLinks,
-  BurgerMenu,
+  BurgerMenu
 } from './styles';
-import raft_logo from '../../../../public/svgs/raft_logo.svg';
-import ic_bars from '../../../../public/svgs/ic_bars.svg';
 import { GetStartedButton } from '@/components';
 import AnimatedLink from '@/components/Common/AnimatedLink';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { links, menu } from './constants';
+import { gsap } from 'gsap';
+import ic_bars from '../../../../public/svgs/ic_bars.svg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Wrapper>
       <Inner>
         <LogoContainer>
-          <Image src={raft_logo} alt="raft_logo" priority />
+          <div>
+            <h2 style={{ 
+              fontFamily: 'PP Mori, Inter, sans-serif', 
+              fontSize: '24px', 
+              fontWeight: 600,
+              color: 'var(--primary)'
+            }}>
+              Koïnè
+            </h2>
+          </div>
           <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
             <motion.div
               variants={menu}

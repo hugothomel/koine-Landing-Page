@@ -17,7 +17,7 @@ export const animate = {
   }),
 };
 
-export const faqData: FAQItem[] = [
+export const faq_data: FAQItem[] = [
   {
     question: 'How do I create an account with RAFT?',
     answer:
@@ -37,5 +37,25 @@ export const faqData: FAQItem[] = [
     question: 'What benefits does RAFT offer for wealth management?',
     answer:
       'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+  },
+  {
+    question: 'How do I create an account with Koïnè?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+  },
+  {
+    question: 'How does Koïnè ensure the security of my financial data?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+  },
+  {
+    question: 'What types of transactions can I perform with Koïnè?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+  },
+  {
+    question: 'What benefits does Koïnè offer for wealth management?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
   },
 ];
