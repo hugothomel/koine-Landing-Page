@@ -1,7 +1,7 @@
-import seamless_payments from '../../../../public/images/seamless_payments.png';
-import smart_investing from '../../../../public/images/smart_investing.png';
-import wealth_management from '../../../../public/images/wealth_management.png';
-import financial_planning from '../../../../public/images/financial_planning.png';
+import onboarding_1 from '../../../../public/svgs/onboarding/onboarding_1.svg';
+import onboarding_2 from '../../../../public/svgs/onboarding/onboarding_2.svg';
+import onboarding_3 from '../../../../public/svgs/onboarding/onboarding_3.svg';
+import onboarding_4 from '../../../../public/svgs/onboarding/onboarding_4.svg';
 // For desktop
 export const desktopHeaderPhrases = [
   'Transform Ideas Into',
@@ -21,25 +21,25 @@ export const mobileParagraphPhrase = [
 
 export const offers = [
   {
-    illustration: seamless_payments,
+    illustration: onboarding_1,
     title: 'AI-Powered Creation',
     details:
       'Transform concepts into interactive prototypes at the speed of thought with our intelligent AI assistant.',
   },
   {
-    illustration: smart_investing,
+    illustration: onboarding_2,
     title: 'Seamless Integration',
     details:
       'Connect with Figma, Notion, Linear and other tools to create a unified workflow that accelerates innovation.',
   },
   {
-    illustration: wealth_management,
+    illustration: onboarding_3,
     title: 'Universal Access',
     details:
       'Break down barriers between disciplines. Whether you\'re a strategist, marketer, or founder - create without limits.',
   },
   {
-    illustration: financial_planning,
+    illustration: onboarding_4,
     title: 'Instant Collaboration',
     details:
       'Generate interactive prototypes with documentation and development tickets ready for your team to execute.',

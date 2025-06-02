@@ -53,16 +53,6 @@ export const ImageCtn = styled.div`
   position: relative;
   display: flex;
 
-  &::after {
-    position: absolute;
-    content: '';
-    height: 13.4375rem;
-    width: 100%;
-    background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, #131313 100%);
-    left: 0;
-    top: 50px;
-  }
-
   img {
     width: 100%;
     object-fit: contain;
@@ -70,10 +60,6 @@ export const ImageCtn = styled.div`
 
   @media (max-width: 768px) {
     margin: 0.32rem auto 0;
-
-    &::after {
-      top: 30px;
-    }
 
     img {
       width: 90%;

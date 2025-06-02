@@ -15,7 +15,6 @@ import RevealCover from '@/components/Common/RevealCover';
 import { Div } from '../Featured/styles';
 import { imageVariants } from '../Featured';
 import { useIsMobile } from '../../../../libs/useIsMobile';
-import financial_freedom_banner from '../../../../public/images/financial_freedom_banner.png';
 import freedom_mobile_banner from '../../../../public/images/freedom_mobile_banner.png';
 import {
   desktopBriefNotePhrase,
@@ -57,7 +56,20 @@ const FinancialFreedom = () => {
             {isMobile ? (
               <Image src={freedom_mobile_banner} alt="banner_img" fill />
             ) : (
-              <Image src={financial_freedom_banner} alt="banner_img" fill />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              >
+                <source src="/folder/koine_test_130425_01.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             )}
           </Div>
         </BannerCtn>
