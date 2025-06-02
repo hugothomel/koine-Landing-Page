@@ -39,21 +39,14 @@ const Preloader = ({
       }
     });
     
-    // First animate the icon rotation
-    tl.to(imageRef.current, {
-      rotate: '360deg',
-      ease: 'back.out(1.7)',
-      duration: 1.4,
+    // Set initial state for the cog (hidden)
+    gsap.set(imageRef.current, {
+      opacity: 0,
+      scale: 0.8,
+      rotation: -45
     });
     
-    // Move the icon up
-    tl.to(imageRef.current, {
-      y: '-100%',
-      ease: 'back.out(1.7)',
-      duration: 0.8,
-    });
-    
-    // Spectacular entrance animation for "Koïnè" letters
+    // First: Spectacular entrance animation for "Koïnè" letters
     tl.to(spans.current, {
       opacity: 1,
       y: 0,
@@ -68,7 +61,7 @@ const Preloader = ({
         ease: 'power3.out'
       },
       ease: 'elastic.out(1, 0.5)'
-    }, '-=0.3')
+    })
     
     // Shimmer effect across letters
     .to(spans.current, {
@@ -77,6 +70,15 @@ const Preloader = ({
       stagger: 0.05,
       ease: 'power2.inOut'
     }, '-=1.2')
+    
+    // Cog appears during shimmer effect
+    .to(imageRef.current, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
+    }, '-=0.3')
     
     // Color transition to final state with glow
     .to(spans.current, {
@@ -87,7 +89,7 @@ const Preloader = ({
       ease: 'power2.inOut'
     }, '-=0.8')
     
-    // Floating animation
+    // Floating animation for text
     .to(spans.current, {
       y: -12,
       rotation: (index) => (index % 2 === 0 ? 2 : -2),
@@ -98,7 +100,7 @@ const Preloader = ({
       yoyo: true
     }, '-=0.4')
     
-    // Final settle and prepare for exit
+    // Text settles back
     .to(spans.current, {
       y: 0,
       rotation: 0,
@@ -106,20 +108,15 @@ const Preloader = ({
       ease: 'power2.out'
     })
     
-    // Exit animation - letters fly up dramatically
-    .to(spans.current, {
-      y: '-200%',
-      opacity: 0,
-      scale: 0.8,
-      rotationY: 180,
-      filter: 'blur(10px)',
-      duration: 1.0,
-      stagger: 0.04,
-      ease: 'power2.in'
-    }, '+=0.1');
+    // Cog rotation animation
+    .to(imageRef.current, {
+      rotate: '+=360deg',
+      ease: 'back.out(1.7)',
+      duration: 1.4,
+    })
     
-    // Animate both overlays to reveal the main content
-    tl.to([wrapperRef.current, secondOverlayRef.current], {
+    // Immediately transition to main page when cog stops spinning
+    .to([wrapperRef.current, secondOverlayRef.current], {
       scaleY: 0,
       transformOrigin: 'top',
       ease: 'back.out(1.7)',
@@ -128,10 +125,10 @@ const Preloader = ({
       onComplete: () => {
         setComplete(true);
       },
-    }, '-=0.8');
+    })
 
     // Fine-tune the second overlay timing
-    tl.to(secondOverlayRef.current, {
+    .to(secondOverlayRef.current, {
       scaleY: 0,
       transformOrigin: 'top',
       ease: [0.83, 0, 0.17, 1] as any,
