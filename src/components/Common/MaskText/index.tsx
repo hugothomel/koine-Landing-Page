@@ -6,11 +6,26 @@ import { useRef } from 'react';
 const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
   const animate = {
     initial: {
-      y: '100%',
+      opacity: 0,
+      scale: 0.8,
+      y: 20,
+      rotateX: 15,
+      filter: 'blur(8px)',
     },
     open: (i: number) => ({
-      y: '0%',
-      transition: { duration: 1, delay: 0.1 * i, ease: [0.33, 1, 0.68, 1] },
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      rotateX: 0,
+      filter: 'blur(0px)',
+      transition: { 
+        duration: 0.8, 
+        delay: 0.15 * i, 
+        ease: [0.25, 0.46, 0.45, 0.94],
+        opacity: { duration: 0.6, delay: 0.15 * i },
+        scale: { duration: 0.8, delay: 0.15 * i, ease: 'backOut' },
+        filter: { duration: 0.6, delay: 0.15 * i }
+      },
     }),
   };
   const body = useRef(null);
