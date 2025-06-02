@@ -89,44 +89,35 @@ const Preloader = ({
       ease: 'power2.inOut'
     }, '-=0.8')
     
-    // Floating animation for text
+    // Quick pulse instead of slow floating - much faster and more dynamic
     .to(spans.current, {
-      y: -12,
-      rotation: (index) => (index % 2 === 0 ? 2 : -2),
-      duration: 1.5,
-      stagger: 0.08,
-      ease: 'sine.inOut',
-      repeat: 1,
-      yoyo: true
-    }, '-=0.4')
+      scale: 1.05,
+      duration: 0.2,
+      stagger: 0.02,
+      ease: 'power2.out',
+      yoyo: true,
+      repeat: 1
+    }, '-=0.2')
     
-    // Text settles back
-    .to(spans.current, {
-      y: 0,
-      rotation: 0,
-      duration: 0.4,
-      ease: 'power2.out'
-    })
-    
-    // Cog rotation animation
+    // Cog rotation animation - starts sooner and overlaps more
     .to(imageRef.current, {
       rotate: '+=360deg',
       ease: 'back.out(1.7)',
-      duration: 1.4,
-    })
+      duration: 0.8,
+    }, '-=0.3')
     
-    // Dynamic radial reveal transition to main page
+    // Dynamic radial reveal transition to main page - starts much sooner
     .to([wrapperRef.current, secondOverlayRef.current], {
       clipPath: 'circle(0% at 50% 50%)',
       rotation: 5,
       scale: 1.1,
       ease: 'power4.inOut',
-      duration: 1.2,
-      stagger: 0.15,
+      duration: 1.0,
+      stagger: 0.1,
       onComplete: () => {
         setComplete(true);
       },
-    })
+    }, '-=0.4')
 
     // Enhanced second overlay with spiral effect
     .to(secondOverlayRef.current, {
@@ -134,8 +125,8 @@ const Preloader = ({
       rotation: -10,
       scale: 0.95,
       ease: 'expo.inOut',
-      duration: 1,
-      delay: -1.05,
+      duration: 0.8,
+      delay: -0.85,
     });
 
     // Add cursor follow effect (optional enhancement)
