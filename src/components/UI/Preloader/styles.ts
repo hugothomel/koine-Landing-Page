@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
   bottom: 0;
   right: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   perspective: 1000px;
   overflow: hidden;
 `;
@@ -34,6 +34,26 @@ export const Inner = styled.div`
     height: 400px;
     filter: drop-shadow(0 4px 12px rgba(111, 111, 230, 0.3));
     transition: filter 0.3s ease;
+  }
+  
+  /* SVG styling with relief/engraving effect */
+  svg {
+    width: 400px;
+    height: 400px;
+    filter: drop-shadow(0 4px 12px rgba(111, 111, 230, 0.3))
+           drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))
+           drop-shadow(0 1px 2px rgba(255, 255, 255, 0.1));
+    transition: filter 0.3s ease;
+    
+    path {
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
+             drop-shadow(0 0 2px rgba(111, 111, 230, 0.3));
+    }
+  }
+  
+  /* Direct SVG color override */
+  img path {
+    fill: var(--primary) !important;
   }
 
   div {
@@ -98,6 +118,26 @@ export const Inner = styled.div`
     img {
       width: 112px;
       height: 100%;
+      filter: drop-shadow(0 4px 12px rgba(111, 111, 230, 0.3));
+    }
+    
+    /* Mobile SVG styling with relief/engraving effect */
+    svg {
+      width: 112px;
+      height: 100%;
+      filter: drop-shadow(0 4px 12px rgba(111, 111, 230, 0.3))
+             drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))
+             drop-shadow(0 1px 2px rgba(255, 255, 255, 0.1));
+      
+      path {
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
+               drop-shadow(0 0 2px rgba(111, 111, 230, 0.3));
+      }
+    }
+    
+    /* Direct SVG color override for mobile */
+    img path {
+      fill: var(--primary) !important;
     }
 
     div {
