@@ -12,34 +12,34 @@ export type Props = {
 export const testimonials = [
   {
     testimony:
-      "Koïnè has transformed my approach to finance. Their smart investing options have helped me grow my wealth, and their user-friendly platform makes managing my money a breeze. I've never felt more confident about my financial future.",
-    person: 'Robert Fox',
+      "I find the results really impressive. The assistance feature where you write a prompt and get asked for clarifications is amazing. I managed to do in 15 minutes what had taken me 2 hours before.",
+    person: 'Anouk',
     avatar: robert_fox,
   },
   {
     testimony:
-      "I can't express how grateful I am to Koïnè. Their wealth management services have been a game-changer for my family's financial security. The expert guidance and personalized strategies have given us peace of mind, knowing that our future is in capable hands.",
-    person: 'Cameron Williamson',
+      "The Design System import went really well and the tutorial to get the API Key is very simple, which isn't always the case with this kind of tool.",
+    person: 'Céline',
     avatar: cameron_williamson,
   },
   {
     testimony:
-      "Koïnè's financial planning services have been a lifeline for me. I always struggled with managing my money, but their team crafted a tailored plan that addressed my goals and concerns. It's been a game-changer in achieving my financial dreams",
-    person: 'Esther Howard',
+      "The screenshot reproduction was really pixel perfect, I got better results than on Bolt or Lovable. The workflow integration with my existing tools is seamless.",
+    person: 'Sophie',
     avatar: esther_howard,
   },
   {
     testimony:
-      "I can't express how grateful I am to Koïnè. Their wealth management services have been a game-changer for my family's financial security. The expert guidance and personalized strategies have given us peace of mind, knowing that our future is in capable hands.",
-    person: 'Cameron Williamson',
+      "Koiné has completely changed how I approach prototyping. The AI understands exactly what I'm trying to achieve and helps me iterate faster than ever before.",
+    person: 'Design Lead',
     avatar: cameron_williamson,
   },
   {
     testimony:
-      "Koïnè has transformed my approach to finance. Their smart investing options have helped me grow my wealth, and their user-friendly platform makes managing my money a breeze. I've never felt more confident about my financial future.",
-    person: 'Robert Fox',
+      "As a product manager, being able to create interactive prototypes without depending on developers has been game-changing. The cash machine sound when the prototype is ready is addictive!",
+    person: 'PM at Tech Startup',
     avatar: robert_fox,
   },
 ];
 
-export const desktopHeaderPhrase = ['Join over 3 million', 'members'];
+export const desktopHeaderPhrase = ['Join innovative teams', 'using Koiné'];

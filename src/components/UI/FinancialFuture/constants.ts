@@ -2,56 +2,56 @@ import ic_money_send from '../../../../public/svgs/ic_money_send.svg';
 import ic_wallet_minus from '../../../../public/svgs/ic_wallet_minus.svg';
 export const cardsInfo = [
   {
-    title: 'Spend Better',
+    title: 'Create Better',
     details:
-      'Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress.',
+      'Import your Figma designs, enrich them with flows and interactions, then export back to Figma seamlessly.',
     icon: ic_money_send,
   },
   {
-    title: 'Invest Better',
+    title: 'Collaborate Better',
     details:
-      'Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress.',
+      'Generate interactive prototypes with documentation and development tickets ready to be assigned, all from your design system.',
     icon: ic_wallet_minus,
   },
 ];
 
 export const stats = [
   {
-    number: '50+',
-    subtitle: 'cities',
+    number: '15min',
+    subtitle: 'avg. prototype time',
   },
   {
-    number: '50,000+',
-    subtitle: 'transactions',
+    number: '83%',
+    subtitle: 'of creatives use AI',
   },
   {
-    number: '3M+',
-    subtitle: 'users',
+    number: '60%',
+    subtitle: 'report tight deadlines',
   },
   {
-    number: '5+',
-    subtitle: 'user ratings',
+    number: '€50k',
+    subtitle: 'typical prototype cost',
   },
 ];
 
 // For desktop
 export const desktopHeaderPhrase = [
-  'Confidently Shape Your',
-  'Financial Future',
+  'Koiné Creates A',
+  'Seamless Workflow',
 ];
 export const desktopParagraphPhrase = [
-  'At Koïnè, we empower you to confidently shape your financial future. Our modern',
-  'approach simplifies saving and investing, making it easier than ever.',
+  'Relie vos outils (Figma, Notion, Linear…) pour que l\'idée d\'hier devienne le',
+  'prototype de ce matin et la spéc produit de cet après‑midi.',
 ];
 
 // For mobile
 export const mobileHeaderPhrase = [
-  'Confidently Shape',
-  ' Your Financial Future',
+  'Koiné Creates A',
+  ' Seamless Workflow',
 ];
 export const mobileParagraphPhrase = [
-  'At Koïnè, we empower you to confidently shape',
-  'your financial future. Our modern approach simplifies',
-  'saving and investing, making',
-  'it easier than ever.',
+  'Relie vos outils (Figma, Notion, Linear…) pour que',
+  'l\'idée d\'hier devienne le prototype de ce matin et la',
+  'spéc produit de cet',
+  'après‑midi.',
 ];

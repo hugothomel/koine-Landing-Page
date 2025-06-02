@@ -4,68 +4,68 @@ import wealth_management from '../../../../public/images/wealth_management.png';
 import financial_planning from '../../../../public/images/financial_planning.png';
 // For desktop
 export const desktopHeaderPhrases = [
-  'Elevate Your Financial',
-  'Journey with RAFT',
+  'Transform Ideas Into',
+  'Interactive Prototypes',
 ];
 export const desktopParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From investments to payments,',
-  "we've got you covered. Join us and unlock your potential today.",
+  'Koiné offers a complete prototyping ecosystem. From AI assistance to workflow integration,',
+  "we've got you covered. Join us and unlock your creative potential today.",
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From',
-  "investments to payments, we've got you covered.",
-  'Join us and unlock your potential today.',
+  'Koiné offers a complete prototyping ecosystem. From',
+  "AI assistance to workflow integration, we've got you covered.",
+  'Join us and unlock your creative potential today.',
 ];
 
 export const offers = [
   {
     illustration: seamless_payments,
-    title: 'Seamless Payments',
+    title: 'AI-Powered Creation',
     details:
-      'Enjoy secure, seamless transactions that make managing your money a breeze.',
+      'Transform concepts into interactive prototypes at the speed of thought with our intelligent AI assistant.',
   },
   {
     illustration: smart_investing,
-    title: 'Smart Investing',
+    title: 'Seamless Integration',
     details:
-      'Grow your wealth confidently with our personalized investment solutions, tailored to your financial goals.',
+      'Connect with Figma, Notion, Linear and other tools to create a unified workflow that accelerates innovation.',
   },
   {
     illustration: wealth_management,
-    title: 'Wealth Management',
+    title: 'Universal Access',
     details:
-      'Make informed decisions for your financial future with our wealth management expertise.',
+      'Break down barriers between disciplines. Whether you\'re a strategist, marketer, or founder - create without limits.',
   },
   {
     illustration: financial_planning,
-    title: 'Financial Planning',
+    title: 'Instant Collaboration',
     details:
-      'Achieve your financial dreams with our comprehensive financial planning services, guiding you toward a secure future.',
+      'Generate interactive prototypes with documentation and development tickets ready for your team to execute.',
   },
 ];
 
 export const TITLE = {
   desktop: {
-    phrase: ['A suite of products catering to', 'every financial need'],
+    phrase: ['A suite of features catering to', 'every creative need'],
   },
   mobile: {
-    phrase: ['Journey with Koïnè'],
+    phrase: ['Journey with Koiné'],
   },
 };
 
 export const DESCRIPTION = {
   desktop: {
     phrase: [
-      'Koïnè offers a world of financial possibilities. From investments to payments,',
+      'Koiné offers a world of creative possibilities. From prototyping to collaboration,',
       "we've got you covered.",
     ],
   },
   mobile: {
     phrase: [
-      'Koïnè offers a world of financial possibilities. From',
-      "investments to payments, we've got you covered.",
+      'Koiné offers a world of creative possibilities. From',
+      "prototyping to collaboration, we've got you covered.",
     ],
   },
 };

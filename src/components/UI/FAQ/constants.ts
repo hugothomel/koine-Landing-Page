@@ -19,43 +19,43 @@ export const animate = {
 
 export const faq_data: FAQItem[] = [
   {
-    question: 'How do I create an account with RAFT?',
+    question: 'How do I get started with Koiné?',
     answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      'Simply sign up for an account and connect your Figma workspace. Our AI assistant will guide you through creating your first interactive prototype in minutes.',
   },
   {
-    question: 'How does RAFT ensure the security of my financial data?',
+    question: 'Do I need technical skills to use Koiné?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      'Not at all! Koiné is designed for everyone - strategists, marketers, founders, and designers. Our AI understands your intent and handles the technical complexity.',
   },
   {
-    question: 'What types of transactions can I perform with RAFT?',
+    question: 'How does Koiné integrate with my existing tools?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      'Koiné seamlessly connects with Figma, Notion, Linear, and other popular tools. Import designs, enrich them with interactions, and export back to your workflow.',
   },
   {
-    question: 'What benefits does RAFT offer for wealth management?',
+    question: 'What makes Koiné different from other prototyping tools?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      'Koiné removes the barriers between vision and reality. Our AI assistant understands your intent, anticipates needs, and helps shape innovation in real time - no technical expertise required.',
   },
   {
-    question: 'How do I create an account with Koïnè?',
+    question: 'How fast can I create a prototype with Koiné?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+      'Most users create interactive prototypes in about 15 minutes. Our AI assistance and workflow integrations dramatically reduce the time from idea to working prototype.',
   },
   {
-    question: 'How does Koïnè ensure the security of my financial data?',
+    question: 'Can I collaborate with my team using Koiné?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+      'Yes! Koiné generates interactive prototypes with documentation and development tickets ready to be assigned, making team collaboration seamless and efficient.',
   },
   {
-    question: 'What types of transactions can I perform with Koïnè?',
+    question: 'Is my data secure with Koiné?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+      'Absolutely. We prioritize data security and privacy, ensuring your designs and prototypes are protected with enterprise-grade security measures.',
   },
   {
-    question: 'What benefits does Koïnè offer for wealth management?',
+    question: 'What file formats does Koiné support?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum praesentium quidem, doloremque nostrum omnis sequi nihil assumenda recusandae culpa nemo quas, ratione veritatis nobis cumque!',
+      'Koiné works with Figma files, screenshots, and various design formats. You can also export your prototypes back to Figma or as interactive web experiences.',
   },
 ];

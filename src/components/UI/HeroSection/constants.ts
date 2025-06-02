@@ -1,26 +1,27 @@
 // For desktop
-export const phrases = ['Building the future of', 'banking.'];
+export const phrases = ['Removing barriers between', 'vision and reality.'];
 export const paragraphPhrases = [
-  "Experience the future of banking with RAFT. We're here to",
-  'empower your financial journey.',
+  "Transform ideas into interactive prototypes instantly with our AI assistant.",
+  'Making digital innovation as accessible as imagination.',
 ];
 
 // For mobile
-export const mobilePhrases = ['Building the future', 'of banking'];
+export const mobilePhrases = ['Removing barriers', 'between vision and reality'];
 export const mobileParagraphPhrases = [
-  "Experience the future of banking with RAFT. We're",
-  'here to empower your financial journey.',
+  "Transform ideas into interactive prototypes instantly",
+  'with our AI assistant. Making digital innovation',
+  'as accessible as imagination.',
 ];
 
 export const desktopHeaderPhrase = [
-  "Experience the future of banking with Koïnè. We're here to",
-  'empower your financial journey.',
+  "Transform ideas into interactive prototypes instantly with our AI assistant.",
+  'Making digital innovation as accessible as imagination.',
 ];
 
-export const desktopParagraphPhrase = "Experience the future of banking with Koïnè.";
+export const desktopParagraphPhrase = "Transform ideas into interactive prototypes instantly with our AI assistant.";
 
 export const mobileHeaderPhrase = [
-  "Experience the future of banking with Koïnè. We're",
-  'here to empower your',
-  'financial journey.',
+  "Transform ideas into interactive prototypes instantly",
+  'with our AI assistant. Making digital innovation',
+  'as accessible as imagination.',
 ];

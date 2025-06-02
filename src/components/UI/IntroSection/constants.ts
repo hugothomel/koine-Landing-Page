@@ -3,39 +3,39 @@ import ic_identification from '../../../../public/svgs/ic_identification.svg';
 import ic_lock_closed from '../../../../public/svgs/ic_lock_closed.svg';
 
 // For desktop
-export const desktopHeaderPhrase = ["Introducing Koïnè's Next-", 'Gen Cards'];
+export const desktopHeaderPhrase = ["AI-Powered", 'Prototyping Platform'];
 export const desktopParagraphPhrase = [
-  " Discover Koïnè's latest innovation – our new cards. Elevate your banking",
-  'experience with cutting-edge features, security, and unprecedented',
-  'convenience.',
+  "In today's fast-paced digital landscape, professionals are constrained by tools",
+  'that require specialized knowledge. Koiné transforms ideas into interactive',
+  'experiences instantly, making innovation as intuitive as thought itself.',
 ];
 
 // For mobile
-export const mobileHeaderPhrase = ["Introducing Koïnè's", 'Next-Gen Cards'];
+export const mobileHeaderPhrase = ["AI-Powered", 'Prototyping Platform'];
 export const mobileParagraphPhrase = [
-  " Discover Koïnè's latest innovation – our new cards.",
-  ' Elevate your banking experience with cutting-edge',
-  'features, security, and unprecedented',
-  'convenience.',
+  "In today's fast-paced digital landscape, professionals",
+  'are constrained by tools that require specialized knowledge.',
+  'Koiné transforms ideas into interactive experiences',
+  'instantly, making innovation as intuitive as thought itself.',
 ];
 
 export const edges = [
   {
-    point: 'Contactless Technology',
+    point: 'Instant Prototyping',
     details:
-      'Our new cards come equipped with contactless technology, allowing you to make swift, secure payments with a simple tap.',
+      'Transform concepts into interactive prototypes at the speed of thought. No technical expertise required.',
     icon: ic_document_duplicate,
   },
   {
-    point: 'Personalization',
+    point: 'Universal Access',
     details:
-      'Customize your card to reflect your unique style. Choose from a range of designs that suit your personality.',
+      'Breaking down barriers between disciplines. Whether you\'re a strategist, marketer, or founder - create without limits.',
     icon: ic_identification,
   },
   {
-    point: 'Enhanced Security',
+    point: 'AI Understanding',
     details:
-      'Your peace of mind is our priority. Our cards feature advanced security measures to protect your transactions and data.',
+      'Our AI assistant understands your intent, anticipates needs, and helps shape innovation in real time.',
     icon: ic_lock_closed,
   },
 ];

@@ -7,16 +7,16 @@ import ic_copyright from '../../../../public/svgs/ic_copyright.svg';
 
 const linksArr = [
   {
-    title: 'About us',
-    links: ['Our Company', 'Careers', 'Press kits'],
+    title: 'Platform',
+    links: ['Features', 'Integrations', 'API'],
   },
   {
-    title: 'Legal',
-    links: ['Terms of use', 'Privacy policy', 'About us'],
+    title: 'Resources',
+    links: ['Documentation', 'Tutorials', 'Community'],
   },
   {
-    title: 'About us',
-    links: ['Contact us', 'FAQ'],
+    title: 'Company',
+    links: ['About us', 'Careers', 'Contact'],
   },
 ];
 
@@ -50,7 +50,7 @@ const Footer = () => {
               fontWeight: 600,
               color: 'var(--primary)'
             }}>
-              Koïnè
+              Koiné
             </h2>
           </div>
           <FooterMiddle>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <Image src={qr_code} alt="qr_code" />
               </QRImageCtn>
               <TextCtn>
-                <p>Scan to download App on the Playstore and Appstore.</p>
+                <p>Scan to access Koiné on web and mobile.</p>
                 <IconCtn>
                   <Image src={ic_google_playstore} alt="playstore icon" />
                   <Image src={ic_baseline_apple} alt="apple icon" />
@@ -89,7 +89,7 @@ const Footer = () => {
         <CopyRight>
           <p>
             <Image src={ic_copyright} alt="copyright" /> {new Date().getFullYear()}{' '}
-            Koïnè Corp, LLC.
+            Koiné Corp, LLC.
           </p>
         </CopyRight>
       </Inner>
