@@ -129,91 +129,131 @@ const ScrubbingSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    // Ensure all refs are populated before starting GSAP animations
+    if (!sectionRef.current || !titleRef.current || !subtitleRef.current || !descriptionRef.current || !imageRef.current) {
+      return;
+    }
+
+    // Capture current refs to avoid issues if component unmounts during async GSAP setup (though less likely here)
+    const currentSectionRef = sectionRef.current;
+    const currentTitleRef = titleRef.current;
+    const currentSubtitleRef = subtitleRef.current;
+    const currentDescriptionRef = descriptionRef.current;
+    const currentImageRef = imageRef.current;
 
     const ctx = gsap.context(() => {
-      // Create main timeline
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: '+=400vh',
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          onUpdate: (self) => {
-            // Calculate which slide should be active based on scroll progress
-            const progress = self.progress;
-            const slideIndex = Math.floor(progress * slideData.length);
-            const clampedIndex = Math.min(slideIndex, slideData.length - 1);
-            
-            if (clampedIndex !== currentSlide) {
-              setCurrentSlide(clampedIndex);
-            }
-          }
-        }
-      });
-
-      // Initial state - elements are hidden/transformed
-      gsap.set([titleRef.current, subtitleRef.current, descriptionRef.current], {
+      // Initial state for elements before any animation starts (applies to the first slide's content)
+      gsap.set([currentTitleRef, currentSubtitleRef, currentDescriptionRef], {
         y: 50,
         opacity: 0
       });
-      
-      gsap.set(imageRef.current, {
+      gsap.set(currentImageRef, {
         scale: 0.8,
         rotation: -10,
         opacity: 0
       });
 
-      // Create animation sequence for each slide
-      slideData.forEach((_, index) => {
-        const slideDuration = 1 / slideData.length; // Each slide takes 25% of timeline
-        const slideStart = index * slideDuration;
-        
-        // Fade in content for this slide
-        tl.to([titleRef.current, subtitleRef.current, descriptionRef.current], {
-          y: 0,
-          opacity: 1,
-          duration: slideDuration * 0.3,
-          ease: 'power2.out'
-        }, slideStart)
-        .to(imageRef.current, {
-          scale: 1,
-          rotation: 0,
-          opacity: 1,
-          duration: slideDuration * 0.4,
-          ease: 'back.out(1.7)'
-        }, slideStart + slideDuration * 0.1)
-        .to(imageRef.current, {
-          scale: 1.1,
-          rotation: 5,
-          duration: slideDuration * 0.3,
-          ease: 'power2.inOut'
-        }, slideStart + slideDuration * 0.4)
-        .to(imageRef.current, {
-          scale: 1,
-          rotation: 0,
-          duration: slideDuration * 0.3,
-          ease: 'power2.inOut'
-        }, slideStart + slideDuration * 0.6);
-        
-        // Fade out content (except for last slide)
-        if (index < slideData.length - 1) {
-          tl.to([titleRef.current, subtitleRef.current, descriptionRef.current, imageRef.current], {
-            opacity: 0,
-            y: -20,
-            scale: 0.9,
-            duration: slideDuration * 0.2,
-            ease: 'power2.inOut'
-          }, slideStart + slideDuration * 0.8);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: currentSectionRef,
+          start: 'top top',
+          end: `+=${slideData.length * 3000}vh`, // Each slide gets roughly 300vh of scroll space
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          snap: {
+            snapTo: "labels", // Snap to the closest label in the timeline
+            duration: { min: 0.2, max: 0.8 }, // Duration of the snap animation (can be a range)
+            delay: 0.1, // Delay before snapping
+            ease: "power1.inOut" // Easing for the snap animation
+          },
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const slideIndex = Math.floor(progress * slideData.length);
+            const clampedIndex = Math.min(slideIndex, slideData.length - 1);
+            
+            // Update React state to change content. GSAP continues animating the same elements.
+            // This does not re-trigger the useEffect because of the empty dependency array.
+            setCurrentSlide(clampedIndex);
+          }
         }
       });
 
-    }, sectionRef);
+      slideData.forEach((_, index) => {
+        const P_slide = 1 / slideData.length; // Proportion of timeline for one slide
+        const slideTimelineStart = index * P_slide; // Start time for this slide in the main timeline
 
-    return () => ctx.revert();
-  }, [currentSlide]);
+        // Define the start of the "hold" period for this slide
+        const holdStartTime = slideTimelineStart + P_slide * 0.20;
+
+        // Add a label at the start of the hold period for snapping
+        tl.addLabel(`slide-${index}-hold`, holdStartTime);
+
+        // Entry Animations (0% to 20% of this slide's time slot)
+        tl.fromTo([currentTitleRef, currentSubtitleRef, currentDescriptionRef],
+          { y: 50, opacity: 0 }, // FROM state
+          { 
+            y: 0, 
+            opacity: 1, 
+            duration: P_slide * 0.20, 
+            ease: 'power2.out'
+          },
+          slideTimelineStart) // Position at the start of this slide's segment
+        .fromTo(currentImageRef,
+          { scale: 0.8, rotation: -10, opacity: 0 }, // FROM state
+          { 
+            scale: 1, 
+            rotation: 0, 
+            opacity: 1, 
+            duration: P_slide * 0.20, 
+            ease: 'back.out(1.7)'
+          },
+          slideTimelineStart); // Concurrent with text entry
+
+        // Hold & Wiggle Animations (20% to 80% of this slide's time slot)
+        // This phase has a duration of P_slide * 0.60
+        
+        tl.to(currentImageRef, { // First part of wiggle
+            scale: 1.1,
+            rotation: 5,
+            duration: P_slide * 0.30, 
+            ease: 'power2.inOut'
+          }, holdStartTime)
+        .to(currentImageRef, { // Second part of wiggle
+            scale: 1,
+            rotation: 0,
+            duration: P_slide * 0.30,
+            ease: 'power2.inOut'
+          }, holdStartTime + P_slide * 0.30); // Starts after the first wiggle finishes
+        
+        // Exit Animations (80% to 100% of this slide's time slot)
+        // Only apply if it's NOT the last slide (the last slide should remain visible)
+        if (index < slideData.length - 1) {
+          const exitStartTime = slideTimelineStart + P_slide * 0.80;
+          tl.to([currentTitleRef, currentSubtitleRef, currentDescriptionRef], {
+            opacity: 0,
+            y: -20, // Text elements animate upwards on exit
+            duration: P_slide * 0.20,
+            ease: 'power2.inOut'
+          }, exitStartTime)
+          .to(currentImageRef, {
+            opacity: 0,
+            scale: 0.9,
+            rotation: 5, // Image element scales down and rotates slightly on exit
+            duration: P_slide * 0.20,
+            ease: 'power2.inOut'
+          }, exitStartTime); // Concurrent with text exit
+        }
+      });
+
+    }, currentSectionRef); // Scope GSAP context to the main section element
+
+    return () => {
+      if (ctx && ctx.revert) {
+        ctx.revert(); // Clean up GSAP animations and ScrollTrigger on component unmount
+      }
+    };
+  }, []); // Empty dependency array: ensures this effect runs only once on mount and unmount
 
   const currentSlideData = slideData[currentSlide];
 
