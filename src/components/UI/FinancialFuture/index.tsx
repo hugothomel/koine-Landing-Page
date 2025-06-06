@@ -5,11 +5,6 @@ import future_mobile_banner from '../../../../public/images/future_mobile_banner
 import {
   Wrapper,
   Inner,
-  Header,
-  CardContainer,
-  Card,
-  TextCtn,
-  SVGCtn,
   Stats,
   Stat,
   Banner,
@@ -39,32 +34,6 @@ const FinancialFuture = () => {
             </Stat>
           ))}
         </Stats>
-        <Header>
-          {isMobile ? (
-            <>
-              <MaskText phrases={mobileHeaderPhrase} tag="h1" />
-              <MaskText phrases={mobileParagraphPhrase} tag="p" />
-            </>
-          ) : (
-            <>
-              <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-              <MaskText phrases={desktopParagraphPhrase} tag="p" />
-            </>
-          )}
-        </Header>
-        <CardContainer>
-          {cardsInfo.map((info, i) => (
-            <Card key={i}>
-              <TextCtn>
-                <MaskText phrases={new Array(info.title)} tag="h3" />
-                <MaskText phrases={new Array(info.details)} tag="p" />
-              </TextCtn>
-              <SVGCtn>
-                <Image src={info.icon} alt="icon" />
-              </SVGCtn>
-            </Card>
-          ))}
-        </CardContainer>
       </Inner>
       {/* <Banner>
         {isMobile ? (

@@ -2,12 +2,13 @@ import {
   FAQ,
   Featured,
   FinancialFuture,
-  FinancilaFreedom,
+  FinancialFreedom,
   HeroSection,
   // IntroSection,
   JoinSection,
   OffersSection,
   GetStartedButton,
+  WorkflowSection,
 } from '@/components';
 
 const CTASection = () => (
@@ -30,7 +31,8 @@ export default function Home() {
       <CTASection />
       <OffersSection />
       <CTASection />
-      <FinancilaFreedom />
+      <FinancialFreedom />
+      <WorkflowSection />
       <CTASection />
       <JoinSection />
       <FAQ />
