@@ -178,7 +178,6 @@ const HeroSection = () => {
             );
           })}
         </HeroImageContainer>
-        {/* <GetStartedButton padding="1rem 2rem" /> */}
       </Inner>
     </Wrapper>
   );

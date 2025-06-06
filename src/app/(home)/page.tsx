@@ -26,7 +26,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <CTASection />
       <FinancialFuture />
       <CTASection />
       <OffersSection />
