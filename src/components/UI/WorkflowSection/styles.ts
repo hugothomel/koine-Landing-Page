@@ -1,14 +1,12 @@
 'use client';
 import { styled } from 'styled-components';
 import card_grid from '../../../../public/images/card_grid.png';
-import heroImage1 from '../../../../public/images/Iterate on a project (Inspect mode) - Select element.svg';
-import heroImage2 from '../../../../public/images/Design System.svg';
 
 export const Wrapper = styled.section`
-  padding-top: 3rem;
+  margin-top: 8.25rem;
 
   @media (max-width: 768px) {
-    padding-top: 2rem;
+    margin-top: 6.25rem;
   }
 `;
 
@@ -52,8 +50,8 @@ export const Header = styled.header`
 
 export const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -62,7 +60,7 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  height: 41.875rem;
+  height: 36rem;
   border-radius: 0.75rem;
   border: 1px solid var(--stroke, rgba(255, 255, 255, 0.04));
   background: #131313;
@@ -76,8 +74,8 @@ export const TextCtn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 32.25rem;
-  margin: 3.25rem 3.25rem 2.94rem 3.25rem;
+  max-width: 100%;
+  margin: 2.5rem 2.5rem 2rem 2.5rem;
 
   h3 {
     font-size: 2rem;
@@ -110,7 +108,7 @@ export const TextCtn = styled.div`
 
 export const SVGCtn = styled.div`
   background: url(${card_grid.src});
-  height: 24.55rem;
+  height: 20rem;
   display: grid;
   place-items: center;
 
@@ -131,75 +129,4 @@ export const SVGCtn = styled.div`
       filter: brightness(0) invert(1);
     }
   }
-`;
-
-export const Stats = styled.div`
-  margin: 3rem auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 768px) {
-    margin: 2rem auto;
-  }
-`;
-
-export const Stat = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-
-  h1 {
-    font-size: 5rem;
-    font-weight: 600;
-  }
-
-  p {
-    color: var(--link-color);
-    font-size: 1.125rem;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 1.25rem;
-    }
-
-    p {
-      font-size: 0.75rem;
-    }
-  }
-`;
-
-// export const Number = styled.h1`
-//   font-size: 5rem;
-//   font-weight: 600;
-// `;
-
-// export const SubTitle = styled.p`
-//   color: var(--link-color);
-//   font-size: 1.125rem;
-//   font-weight: 500;
-//   text-transform: uppercase;
-// `;
-
-export const Banner = styled.div`
-  height: 45rem;
-  width: 100%;
-  position: relative;
-
-  img {
-    object-fit: cover;
-  }
-
-  @media (max-width: 768px) {
-    height: 31.25rem;
-    img {
-      object-fit: contain;
-    }
-  }
-`;
+`; 

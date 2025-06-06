@@ -1,9 +1,9 @@
 'use client';
 import { Body, LineMask } from './styles';
-import { useInView, motion } from 'framer-motion';
+import { useInView, motion, AnimatePresence } from 'framer-motion';
 import { useRef } from 'react';
 
-const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
+const MaskText: React.FC<{ phrases: string[]; tag: string }> = ({ phrases, tag }) => {
   const animate = {
     initial: {
       opacity: 0,
@@ -27,55 +27,41 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
         filter: { duration: 0.6, delay: 0.15 * i }
       },
     }),
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      y: 20,
+      rotateX: 15,
+      filter: 'blur(8px)',
+      transition: { duration: 0.8 },
+    },
   };
-  const body = useRef(null);
-  const isInView = useInView(body, { once: true, margin: '-10%', amount: 0.4 });
+  const body = useRef<HTMLDivElement>(null);
+  const isInView = useInView(body, { once: true, margin: '-10%' });
+  const Tag = tag as keyof JSX.IntrinsicElements;
+
   return (
-    <Body ref={body}>
-      {phrases.map((phrase, index) => {
-        return (
-          <LineMask key={index}>
-            {tag === 'h1' ? (
-              <motion.h1
-                variants={animate}
+    <div ref={body}>
+      {phrases.map((phrase, i) => (
+        <div key={`${phrase}-${i}`} className="overflow-hidden">
+          {/* <AnimatePresence> */}
+            {/* {isInView && ( */}
+              <motion.div
+                custom={i}
                 initial="initial"
-                animate={isInView ? 'open' : ''}
-                custom={index}
-              >
-                {phrase}
-              </motion.h1>
-            ) : tag === 'h2' ? (
-              <motion.h2
+                animate="open"
+                exit="exit"
                 variants={animate}
-                initial="initial"
-                animate={isInView ? 'open' : ''}
-                custom={index}
               >
-                {phrase}
-              </motion.h2>
-            ) : tag === 'h3' ? (
-              <motion.h3
-                variants={animate}
-                initial="initial"
-                animate={isInView ? 'open' : ''}
-                custom={index}
-              >
-                {phrase}
-              </motion.h3>
-            ) : (
-              <motion.p
-                variants={animate}
-                initial="initial"
-                animate={isInView ? 'open' : ''}
-                custom={index}
-              >
-                {phrase}
-              </motion.p>
-            )}
-          </LineMask>
-        );
-      })}
-    </Body>
+                <Tag>
+                  {phrase}
+                </Tag>
+              </motion.div>
+            {/* )} */}
+          {/* </AnimatePresence> */}
+        </div>
+      ))}
+    </div>
   );
 };
 
