@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
@@ -92,12 +92,41 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Data for the scrubbing animation
+const slideData = [
+  {
+    title: "AI-Powered Creation",
+    subtitle: "Intelligent Prototyping",
+    description: "Transform concepts into interactive prototypes at the speed of thought with our intelligent AI assistant.",
+    image: "/svgs/onboarding/onboarding_1.svg"
+  },
+  {
+    title: "Seamless Integration", 
+    subtitle: "Connected Workflows",
+    description: "Connect with Figma, Notion, Linear and other tools to create a unified workflow that accelerates innovation.",
+    image: "/svgs/onboarding/onboarding_2.svg"
+  },
+  {
+    title: "Universal Access",
+    subtitle: "Breaking Barriers",
+    description: "Break down barriers between disciplines. Whether you're a strategist, marketer, or founder - create without limits.",
+    image: "/svgs/onboarding/onboarding_3.svg"
+  },
+  {
+    title: "Instant Collaboration",
+    subtitle: "Team Ready",
+    description: "Generate interactive prototypes with documentation and development tickets ready for your team to execute.",
+    image: "/svgs/onboarding/onboarding_4.svg"
+  }
+];
+
 const ScrubbingSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -108,10 +137,20 @@ const ScrubbingSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
-          end: 'bottom center',
+          end: '+=400vh',
           pin: true,
           scrub: 1,
           anticipatePin: 1,
+          onUpdate: (self) => {
+            // Calculate which slide should be active based on scroll progress
+            const progress = self.progress;
+            const slideIndex = Math.floor(progress * slideData.length);
+            const clampedIndex = Math.min(slideIndex, slideData.length - 1);
+            
+            if (clampedIndex !== currentSlide) {
+              setCurrentSlide(clampedIndex);
+            }
+          }
         }
       });
 
@@ -127,67 +166,73 @@ const ScrubbingSection = () => {
         opacity: 0
       });
 
-      // Animation sequence
-      tl.to(titleRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      })
-      .to(subtitleRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      }, '-=0.1')
-      .to(imageRef.current, {
-        scale: 1,
-        rotation: 0,
-        opacity: 1,
-        duration: 0.4,
-        ease: 'back.out(1.7)'
-      }, '-=0.2')
-      .to(descriptionRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      }, '-=0.1')
-      .to(imageRef.current, {
-        scale: 1.1,
-        rotation: 5,
-        duration: 0.3,
-        ease: 'power2.inOut'
-      })
-      .to(imageRef.current, {
-        scale: 1,
-        rotation: 0,
-        duration: 0.3,
-        ease: 'power2.inOut'
+      // Create animation sequence for each slide
+      slideData.forEach((_, index) => {
+        const slideDuration = 1 / slideData.length; // Each slide takes 25% of timeline
+        const slideStart = index * slideDuration;
+        
+        // Fade in content for this slide
+        tl.to([titleRef.current, subtitleRef.current, descriptionRef.current], {
+          y: 0,
+          opacity: 1,
+          duration: slideDuration * 0.3,
+          ease: 'power2.out'
+        }, slideStart)
+        .to(imageRef.current, {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          duration: slideDuration * 0.4,
+          ease: 'back.out(1.7)'
+        }, slideStart + slideDuration * 0.1)
+        .to(imageRef.current, {
+          scale: 1.1,
+          rotation: 5,
+          duration: slideDuration * 0.3,
+          ease: 'power2.inOut'
+        }, slideStart + slideDuration * 0.4)
+        .to(imageRef.current, {
+          scale: 1,
+          rotation: 0,
+          duration: slideDuration * 0.3,
+          ease: 'power2.inOut'
+        }, slideStart + slideDuration * 0.6);
+        
+        // Fade out content (except for last slide)
+        if (index < slideData.length - 1) {
+          tl.to([titleRef.current, subtitleRef.current, descriptionRef.current, imageRef.current], {
+            opacity: 0,
+            y: -20,
+            scale: 0.9,
+            duration: slideDuration * 0.2,
+            ease: 'power2.inOut'
+          }, slideStart + slideDuration * 0.8);
+        }
       });
 
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [currentSlide]);
+
+  const currentSlideData = slideData[currentSlide];
 
   return (
     <Wrapper ref={sectionRef}>
       <Inner>
         <TextContainer>
-          <Title ref={titleRef}>Scrubbing Animation</Title>
-          <Subtitle ref={subtitleRef}>Scroll-controlled Timeline</Subtitle>
+          <Title ref={titleRef}>{currentSlideData.title}</Title>
+          <Subtitle ref={subtitleRef}>{currentSlideData.subtitle}</Subtitle>
           <Description ref={descriptionRef}>
-            This section demonstrates a GSAP timeline controlled by scroll position with pin enabled. 
-            The entire section stays locked in view while the animation plays based on scroll progress.
+            {currentSlideData.description}
           </Description>
         </TextContainer>
         <ImageContainer ref={imageRef}>
           <Image 
-            src="/images/big_banner.png" 
-            alt="Scrubbing demo" 
+            src={currentSlideData.image} 
+            alt={currentSlideData.title} 
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'contain' }}
           />
         </ImageContainer>
       </Inner>
