@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Inner = styled.div`
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   height: 100vh;
@@ -33,7 +33,7 @@ export const Inner = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  flex: 1;
+  flex: 0 0 400px;
   max-width: 500px;
 `;
 
@@ -73,16 +73,13 @@ export const Description = styled.p`
 
 export const ImageContainer = styled.div`
   flex: 1;
-  max-width: 500px;
-  height: 400px;
+  width: 100%;
+  height: 700px;
   position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 300px;
+    height: 500px;
   }
 `;
 
@@ -157,7 +154,7 @@ const ScrubbingSection = () => {
         scrollTrigger: {
           trigger: currentSectionRef,
           start: 'top top',
-          end: `+=${slideData.length * 3000}vh`, // Each slide gets roughly 300vh of scroll space
+          end: `+=${slideData.length * 1500}vh`, // Each slide gets roughly 300vh of scroll space
           pin: true,
           scrub: 1,
           anticipatePin: 1,
