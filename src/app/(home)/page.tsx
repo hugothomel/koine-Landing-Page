@@ -5,7 +5,6 @@ import {
   HeroSection,
   // IntroSection,
   JoinSection,
-  OffersSection,
   GetStartedButton,
   WorkflowSection,
   ScrubbingSection,
@@ -28,7 +27,6 @@ export default function Home() {
       <HeroSection />
       <FinancialFuture />
       <CTASection />
-      <OffersSection />
       <ScrubbingSection />
       <CTASection />
       <WorkflowSection />
