@@ -12,8 +12,8 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 56rem;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   text-align: center;
   background-position: top center;
   background-size: contain;
@@ -49,6 +49,8 @@ export const HeroTextContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 2rem;
+  max-width: 56rem;
+  width: 100%;
 
   h1 {
     font-size: 6rem;
@@ -81,10 +83,9 @@ export const HeroTextContainer = styled.div`
 export const HeroImageContainer = styled.div`
   margin-top: 3rem;
   width: 100%;
-  max-width: 50rem; /* Viewport width for the centered image */
-  height: 400px; /* Or use aspect-ratio, e.g., aspect-ratio: 16 / 9; */
+  height: 500px;
   position: relative;
-  overflow: hidden; /* Crucial for clipping side images */
+  overflow: visible;
 
   /* Remove direct img styling here if CarouselImageItem handles it */
 `;
