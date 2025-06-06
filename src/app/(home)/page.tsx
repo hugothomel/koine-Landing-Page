@@ -2,7 +2,6 @@ import {
   FAQ,
   Featured,
   FinancialFuture,
-  FinancialFreedom,
   HeroSection,
   // IntroSection,
   JoinSection,
@@ -30,7 +29,6 @@ export default function Home() {
       <CTASection />
       <OffersSection />
       <CTASection />
-      <FinancialFreedom />
       <WorkflowSection />
       <CTASection />
       <JoinSection />

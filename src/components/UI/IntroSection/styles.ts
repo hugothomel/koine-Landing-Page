@@ -111,3 +111,63 @@ export const RightImage = styled(Image)`
     top: 60%;
   }
 `;
+
+export const Edges = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+`;
+
+export const Edge = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--divider);
+  border-radius: 0.5rem;
+  background-color: var(--off-white);
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem; /* Reset margin from Header h3 */
+    text-transform: none; /* Reset text-transform from Header h3 */
+    color: var(--text-primary); /* Reset color from Header h3 */
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--link-color);
+    line-height: 1.5rem;
+    margin: 0; /* Reset margin from Header p */
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    h3 {
+      font-size: 1.125rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
+`;
+
+export const Title = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  img {
+    width: 1.5rem; /* Adjust icon size as needed */
+    height: 1.5rem;
+  }
+`;
