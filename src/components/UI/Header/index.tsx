@@ -51,7 +51,7 @@ const Header = () => {
         </Nav>
         <CallToActions className={isOpen ? 'active' : ''}>
           <AnimatedLink title="Login" />
-          <GetStartedButton padding="0.5rem 0.75rem" />
+          <GetStartedButton padding="0.5rem 0.75rem" label="Join the beta" />
         </CallToActions>
       </Inner>
     </Wrapper>

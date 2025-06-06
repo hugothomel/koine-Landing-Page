@@ -24,6 +24,7 @@ import {
   mobileParagraphPhrase,
   stats,
 } from './constants';
+import GetStartedButton from '@/components/Common/GetStartedButton';
 
 const FinancialFuture = () => {
   const isMobile = useIsMobile();
@@ -65,6 +66,7 @@ const FinancialFuture = () => {
             </Stat>
           ))}
         </Stats>
+        <GetStartedButton padding="1rem 2rem" label="Join the beta" />
       </Inner>
       {/* <Banner>
         {isMobile ? (

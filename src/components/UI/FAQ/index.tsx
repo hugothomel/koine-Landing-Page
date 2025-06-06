@@ -12,6 +12,7 @@ import {
 import Image from 'next/image';
 import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
 import { MaskText } from '@/components';
+import GetStartedButton from '@/components/Common/GetStartedButton';
 import { useIsMobile } from '../../../../libs/useIsMobile';
 import {
   animate,
@@ -71,6 +72,7 @@ const FAQ = () => {
             </AccordionItem>
           ))}
         </Accordion>
+        <GetStartedButton padding="1rem 2rem" label="Join the beta" />
       </Inner>
     </Wrapper>
   );

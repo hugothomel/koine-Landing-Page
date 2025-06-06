@@ -1,21 +1,19 @@
 import {
   FAQ,
-  Featured,
   FinancialFuture,
-  FinancilaFreedom,
   HeroSection,
   // IntroSection,
   JoinSection,
   OffersSection,
+  StatsSection,
 } from '@/components';
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <Featured />
+      <StatsSection />
       <OffersSection />
-      <FinancilaFreedom />
       <FinancialFuture />
       {/* <IntroSection /> */}
       <JoinSection />

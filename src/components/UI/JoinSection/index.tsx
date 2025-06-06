@@ -18,6 +18,7 @@ import ic_arrow_left from '../../../../public/svgs/ic_arrow_left.svg';
 import ic_arrow_right from '../../../../public/svgs/ic_arrow_right.svg';
 import Image from 'next/image';
 import { MaskText } from '@/components';
+import GetStartedButton from '@/components/Common/GetStartedButton';
 import { useIsMobile } from '../../../../libs/useIsMobile';
 import { Props, desktopHeaderPhrase, testimonials } from './constants';
 
@@ -72,6 +73,7 @@ const JoinSection = () => {
             <Image src={ic_arrow_right} alt="arrow_right" />
           </Next>
         </PaginationButtonContainer>
+        <GetStartedButton padding="1rem 2rem" label="Join the beta" />
       </Inner>
     </Wrapper>
   );

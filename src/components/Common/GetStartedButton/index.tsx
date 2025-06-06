@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import { LinkTo } from './styles';
 
-const GetStartedButton = ({ padding }: { padding: string }) => {
+const GetStartedButton = ({
+  padding,
+  label = 'Get Started',
+}: {
+  padding: string;
+  label?: string;
+}) => {
   return (
     <LinkTo
       style={{
@@ -9,7 +15,7 @@ const GetStartedButton = ({ padding }: { padding: string }) => {
       }}
       href="/"
     >
-      Get Started
+      {label}
     </LinkTo>
   );
 };

@@ -10,6 +10,7 @@ import {
   TextCtn,
 } from './styles';
 import MaskText from '@/components/Common/MaskText';
+import GetStartedButton from '@/components/Common/GetStartedButton';
 import { useIsMobile } from '../../../../libs/useIsMobile';
 import {
   desktopHeaderPhrases,
@@ -58,6 +59,7 @@ const OffersSection = () => {
             </OfferCard>
           ))}
         </Offers>
+        <GetStartedButton padding="1rem 2rem" label="Join the beta" />
       </Inner>
     </Wrapper>
   );
