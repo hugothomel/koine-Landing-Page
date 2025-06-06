@@ -2,15 +2,17 @@
 import { styled } from 'styled-components';
 import grid_background from '../../../../public/images/offer_card_grid_1.png';
 
-export const Wrapper = styled.section``;
+export const Wrapper = styled.section`
+  margin-top: 6rem;
+`;
 
 export const Inner = styled.div`
   max-width: 1440px;
   width: 90%;
-  margin: 12.38rem auto 0;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-    margin-top: 6.44rem;
+    margin-top: 3rem;
   }
 `;
 
