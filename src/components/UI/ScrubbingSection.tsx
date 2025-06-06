@@ -107,7 +107,7 @@ const ScrubbingSection = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top center',
+          start: 'top top',
           end: 'bottom center',
           pin: true,
           scrub: 1,
