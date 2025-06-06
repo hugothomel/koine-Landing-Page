@@ -1,27 +1,27 @@
 // For desktop
-export const phrases = ['Removing barriers between', 'vision and reality.'];
+export const phrases = ['Skip the brief.', 'Build the idea.'];
 export const paragraphPhrases = [
-  "Transform ideas into interactive prototypes instantly with our AI assistant.",
-  'Making digital innovation as accessible as imagination.',
+  "Koine turns your words into working prototypes, so you can stop describing and start building.",
 ];
 
 // For mobile
-export const mobilePhrases = ['Removing barriers', 'between vision and reality'];
+export const mobilePhrases = ['Skip the brief.', 'Build the idea.'];
 export const mobileParagraphPhrases = [
-  "Transform ideas into interactive prototypes instantly",
-  'with our AI assistant. Making digital innovation',
-  'as accessible as imagination.',
+  "Koine turns your words into",
+  "working prototypes, so you",
+  "can stop describing and",
+  "start building.",
 ];
 
 export const desktopHeaderPhrase = [
-  "Transform ideas into interactive prototypes instantly with our AI assistant.",
-  'Making digital innovation as accessible as imagination.',
+  "Koine turns your words into working prototypes, so you can stop describing and start building.",
 ];
 
-export const desktopParagraphPhrase = "Transform ideas into interactive prototypes instantly with our AI assistant.";
+export const desktopParagraphPhrase = "Koine turns your words into working prototypes, so you can stop describing and start building.";
 
 export const mobileHeaderPhrase = [
-  "Transform ideas into interactive prototypes instantly",
-  'with our AI assistant. Making digital innovation',
-  'as accessible as imagination.',
+  "Koine turns your words into",
+  "working prototypes, so you",
+  "can stop describing and",
+  "start building.",
 ];

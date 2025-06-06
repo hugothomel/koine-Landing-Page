@@ -1,6 +1,8 @@
 'use client';
 import { styled } from 'styled-components';
 import card_grid from '../../../../public/images/card_grid.png';
+import heroImage1 from '../../../../public/images/Iterate on a project (Inspect mode) - Select element.svg';
+import heroImage2 from '../../../../public/images/Design System.svg';
 
 export const Wrapper = styled.section`
   padding-top: 3rem;
