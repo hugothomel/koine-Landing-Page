@@ -31,9 +31,15 @@ export const Pill = styled.div`
   margin-bottom: 1rem;
 
   span {
-    color: var(--light-gray);
+    color: var(--primary);
     font-size: 1rem;
     font-weight: 400;
+    vertical-align: middle;
+  }
+
+  img {
+    filter: none;
+    vertical-align: middle;
   }
 `;
 

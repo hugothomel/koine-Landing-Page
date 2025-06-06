@@ -18,8 +18,7 @@ const HeroSection = () => {
     <Wrapper>
       <Inner>
         <Pill>
-          <span>Introducing Koiné AI Assistant</span>
-          <Image src={ic_chevron_right} alt="chevron-right" />
+          <span>Introducing Koïnè Prototyping Agent</span>
         </Pill>
         <HeroTextContainer>
           {isMobile ? (
