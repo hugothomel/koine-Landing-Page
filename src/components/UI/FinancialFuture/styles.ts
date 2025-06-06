@@ -3,7 +3,11 @@ import { styled } from 'styled-components';
 import card_grid from '../../../../public/images/card_grid.png';
 
 export const Wrapper = styled.section`
-  padding-top: 7.75rem;
+  padding-top: 3rem;
+
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -128,14 +132,14 @@ export const SVGCtn = styled.div`
 `;
 
 export const Stats = styled.div`
-  margin: 6.25rem auto;
+  margin: 3rem auto;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    margin: 3.75rem auto;
+    margin: 2rem auto;
   }
 `;
 

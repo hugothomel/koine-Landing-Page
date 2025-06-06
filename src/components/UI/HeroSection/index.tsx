@@ -34,7 +34,7 @@ const HeroSection = () => {
             </>
           )}
         </HeroTextContainer>
-        <GetStartedButton padding="1rem 2rem" />
+        {/* <GetStartedButton padding="1rem 2rem" /> */}
       </Inner>
     </Wrapper>
   );
