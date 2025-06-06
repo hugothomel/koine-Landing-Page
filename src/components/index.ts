@@ -11,3 +11,4 @@ export { default as Footer } from './UI/Footer';
 export { default as Preloader } from './UI/Preloader';
 export { default as MaskText } from './Common/MaskText';
 export { default as WorkflowSection } from './UI/WorkflowSection';
+export { default as ScrubbingSection } from './UI/ScrubbingSection';

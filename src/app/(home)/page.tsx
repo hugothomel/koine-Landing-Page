@@ -8,6 +8,7 @@ import {
   OffersSection,
   GetStartedButton,
   WorkflowSection,
+  ScrubbingSection,
 } from '@/components';
 
 const CTASection = () => (
@@ -28,6 +29,7 @@ export default function Home() {
       <FinancialFuture />
       <CTASection />
       <OffersSection />
+      <ScrubbingSection />
       <CTASection />
       <WorkflowSection />
       <CTASection />
