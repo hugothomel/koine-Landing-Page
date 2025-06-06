@@ -1,5 +1,6 @@
 import ic_figma from '../../../../public/svgs/figma_icon.svg';
 import ic_notion from '../../../../public/svgs/notion_icon.svg';
+import ic_circle_stack from '../../../../public/svgs/ic_circle_stack.svg';
 import { StaticImageData } from 'next/image';
 
 export type CardInfo = {
@@ -20,6 +21,12 @@ export const cardsInfo: CardInfo[] = [
     details:
       'Generate interactive prototypes with documentation and development tickets ready to be assigned, all from your design system.',
     icon: ic_notion,
+  },
+  {
+    title: 'Connect Systems',
+    details:
+      'Connect your design systems to create prototypes that look exactly how they should, maintaining consistency across all your tools.',
+    icon: ic_circle_stack,
   },
 ];
 

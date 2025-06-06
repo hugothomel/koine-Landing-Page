@@ -50,8 +50,8 @@ export const Header = styled.header`
 
 export const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -60,7 +60,7 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  height: 41.875rem;
+  height: 36rem;
   border-radius: 0.75rem;
   border: 1px solid var(--stroke, rgba(255, 255, 255, 0.04));
   background: #131313;
@@ -74,8 +74,8 @@ export const TextCtn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 32.25rem;
-  margin: 3.25rem 3.25rem 2.94rem 3.25rem;
+  max-width: 100%;
+  margin: 2.5rem 2.5rem 2rem 2.5rem;
 
   h3 {
     font-size: 2rem;
@@ -108,7 +108,7 @@ export const TextCtn = styled.div`
 
 export const SVGCtn = styled.div`
   background: url(${card_grid.src});
-  height: 24.55rem;
+  height: 20rem;
   display: grid;
   place-items: center;
 
