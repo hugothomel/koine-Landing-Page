@@ -146,15 +146,16 @@ const ScrubbingSection = () => {
       });
       gsap.set(currentImageRef, {
         scale: 0.8,
-        rotation: -10,
-        opacity: 0
+        rotation: 0,
+        opacity: 0,
+        xPercent: 100
       });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: currentSectionRef,
           start: 'top top',
-          end: `+=${slideData.length * 1500}vh`, // Each slide gets roughly 300vh of scroll space
+          end: `+=${slideData.length * 3000}vh`, // Increased total scroll distance
           pin: true,
           scrub: 1,
           anticipatePin: 1,
@@ -181,63 +182,65 @@ const ScrubbingSection = () => {
         const slideTimelineStart = index * P_slide; // Start time for this slide in the main timeline
 
         // Define the start of the "hold" period for this slide
-        const holdStartTime = slideTimelineStart + P_slide * 0.20;
+        const holdStartTime = slideTimelineStart + P_slide * 0.35; // Adjusted: Entry takes 0.35
 
         // Add a label at the start of the hold period for snapping
         tl.addLabel(`slide-${index}-hold`, holdStartTime);
 
-        // Entry Animations (0% to 20% of this slide's time slot)
+        // Entry Animations (0% to 35% of this slide's time slot)
         tl.fromTo([currentTitleRef, currentSubtitleRef, currentDescriptionRef],
           { y: 50, opacity: 0 }, // FROM state
           { 
             y: 0, 
             opacity: 1, 
-            duration: P_slide * 0.20, 
+            duration: P_slide * 0.35, // Increased duration
             ease: 'power2.out'
           },
           slideTimelineStart) // Position at the start of this slide's segment
         .fromTo(currentImageRef,
-          { scale: 0.8, rotation: -10, opacity: 0 }, // FROM state
+          { scale: 0.8, rotation: 0, opacity: 0, xPercent: 100 }, // FROM state (slide from right)
           { 
             scale: 1, 
             rotation: 0, 
             opacity: 1, 
-            duration: P_slide * 0.20, 
-            ease: 'back.out(1.7)'
+            xPercent: 0, // Slide to center
+            duration: P_slide * 0.35, // Increased duration
+            ease: 'power2.out' 
           },
           slideTimelineStart); // Concurrent with text entry
 
-        // Hold & Wiggle Animations (20% to 80% of this slide's time slot)
-        // This phase has a duration of P_slide * 0.60
+        // Hold & Wiggle Animations (35% to 65% of this slide's time slot)
+        // This phase has a duration of P_slide * 0.30 (0.15 + 0.15)
         
         tl.to(currentImageRef, { // First part of wiggle
-            scale: 1.1,
-            rotation: 5,
-            duration: P_slide * 0.30, 
+            scale: 1.1, 
+            rotation: 5,  
+            duration: P_slide * 0.15, // Decreased duration
             ease: 'power2.inOut'
           }, holdStartTime)
         .to(currentImageRef, { // Second part of wiggle
             scale: 1,
             rotation: 0,
-            duration: P_slide * 0.30,
+            duration: P_slide * 0.15, // Decreased duration
             ease: 'power2.inOut'
-          }, holdStartTime + P_slide * 0.30); // Starts after the first wiggle finishes
+          }, holdStartTime + P_slide * 0.15); // Starts after the first wiggle finishes
         
-        // Exit Animations (80% to 100% of this slide's time slot)
+        // Exit Animations (65% to 100% of this slide's time slot)
         // Only apply if it's NOT the last slide (the last slide should remain visible)
         if (index < slideData.length - 1) {
-          const exitStartTime = slideTimelineStart + P_slide * 0.80;
+          const exitStartTime = slideTimelineStart + P_slide * 0.65; // Adjusted: Entry (0.35) + Hold (0.30) = 0.65
           tl.to([currentTitleRef, currentSubtitleRef, currentDescriptionRef], {
             opacity: 0,
-            y: -20, // Text elements animate upwards on exit
-            duration: P_slide * 0.20,
+            y: -20, 
+            duration: P_slide * 0.35, // Increased duration
             ease: 'power2.inOut'
           }, exitStartTime)
           .to(currentImageRef, {
             opacity: 0,
             scale: 0.9,
-            rotation: 5, // Image element scales down and rotates slightly on exit
-            duration: P_slide * 0.20,
+            rotation: 0, 
+            xPercent: -100, 
+            duration: P_slide * 0.35, // Increased duration
             ease: 'power2.inOut'
           }, exitStartTime); // Concurrent with text exit
         }
