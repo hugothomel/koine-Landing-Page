@@ -6,6 +6,7 @@ import {
   // IntroSection,
   JoinSection,
   OffersSection,
+  PinnedSection,
   GetStartedButton,
   WorkflowSection,
 } from '@/components';
@@ -26,6 +27,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <FinancialFuture />
+      <PinnedSection />
       <CTASection />
       <OffersSection />
       <CTASection />
