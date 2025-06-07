@@ -28,19 +28,19 @@ export const mobileHeaderPhrase = [
 
 export const stats = [
   {
-    number: '15min',
-    subtitle: 'avg. prototype time',
+    number: '100%',
+    subtitle: 'pixel-perfect and aligned with your Design System',
   },
   {
-    number: '83%',
-    subtitle: 'of creatives use AI',
+    number: '93%',
+    subtitle: 'faster With your existing Figma components',
   },
   {
-    number: '60%',
-    subtitle: 'report tight deadlines',
+    number: 'Zero',
+    subtitle: 'handoff friction with auto-generated specs',
   },
   {
-    number: '€50k',
-    subtitle: 'typical prototype cost',
+    number: '€5k',
+    subtitle: 'saved in average per project vs traditional workflow',
   },
 ];
