@@ -165,13 +165,14 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
       font-weight: 400;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 1.15rem;
+      line-height: 1.4;
     }
   }
 
@@ -179,14 +180,14 @@ export const HeroTextContainer = styled.div`
     gap: 0.75rem;
     padding: 0 1rem 1rem;
     h1 {
-      font-size: 2rem;
+      font-size: 3.25rem;
       line-height: 1.1;
       font-weight: 400;
     }
 
     p {
-      font-size: 0.9rem;
-      line-height: 1.4rem;
+      font-size: 1.1rem;
+      line-height: 1.4;
     }
   }
 
@@ -194,14 +195,14 @@ export const HeroTextContainer = styled.div`
     gap: 0.5rem;
     padding: 0 0.75rem 0.75rem;
     h1 {
-      font-size: 1.75rem;
+      font-size: 3rem;
       line-height: 1.1;
       font-weight: 400;
     }
 
     p {
-      font-size: 0.85rem;
-      line-height: 1.3rem;
+      font-size: 1rem;
+      line-height: 1.4;
     }
   }
 `;
