@@ -19,7 +19,7 @@ export const cardsInfo: CardInfo[] = [
   {
     title: 'Collaborate Better',
     details:
-      'Generate interactive prototypes with documentation and development tickets ready to be assigned, all from your design system.',
+      'Generate specification documents and development tickets ready to be assigned, all from your prototype.',
     icon: ic_notion,
   },
   {

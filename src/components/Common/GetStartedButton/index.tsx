@@ -7,7 +7,7 @@ const GetStartedButton = ({ padding, text = "Get Started" }: { padding: string; 
       style={{
         padding: padding,
       }}
-      href="/"
+      href="https://prototyper.live/"
     >
       {text}
     </LinkTo>
