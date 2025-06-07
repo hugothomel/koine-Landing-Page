@@ -92,6 +92,42 @@ export const GlobalStyles = styled.createGlobalStyle`
     letter-spacing: -0.02em;
   }
 
+  /* Small mobile optimizations */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+      line-height: 1.1em;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.3em;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.4em;
+    }
+  }
+
+  /* Very small mobile optimizations */
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 22px;
+      line-height: 1.1em;
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.3em;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+  }
+
   a {
     color: inherit;
     text-decoration: none;

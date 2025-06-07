@@ -14,6 +14,14 @@ export const Wrapper = styled.section`
   @media (max-width: 768px) {
     padding: 0.75rem 0;
   }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.5rem 0;
+  }
 `;
 
 export const Inner = styled.div`
@@ -23,6 +31,15 @@ export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    width: 95%;
+  }
+
+  @media (max-width: 375px) {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
 `;
 
 export const LogoContainer = styled.div`

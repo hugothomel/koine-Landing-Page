@@ -11,4 +11,14 @@ export const LinkTo = styled(Link)`
   color: var(--white);
   font-size: 1rem;
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    min-height: 44px; /* Ensure touch target size */
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.85rem;
+    min-height: 44px; /* Ensure touch target size */
+  }
 `;

@@ -138,10 +138,16 @@ export const Stats = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
 
   @media (max-width: 768px) {
     margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
   }
 `;
 
@@ -164,6 +170,17 @@ export const Stat = styled.div`
     text-transform: uppercase;
   }
 
+  // Medium screens (e.g., iPad landscape)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+      font-size: 3.5rem; // Intermediate font size for numbers
+    }
+    p {
+      font-size: 1rem; // Intermediate font size for subtitles
+    }
+  }
+
+  // Small screens (e.g., iPad portrait, phones)
   @media (max-width: 768px) {
     h1 {
       font-size: 1.25rem;
@@ -172,6 +189,11 @@ export const Stat = styled.div`
     p {
       font-size: 0.75rem;
     }
+    /* Add margin-bottom if gap in parent is not enough or for more specific control */
+    /* margin-bottom: 1.5rem; */ 
+    /* &:last-child {
+      margin-bottom: 0;
+    } */
   }
 `;
 

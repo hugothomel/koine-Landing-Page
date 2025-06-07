@@ -8,6 +8,14 @@ export const Wrapper = styled.section`
   @media (max-width: 768px) {
     padding-top: 6rem;
   }
+
+  @media (max-width: 480px) {
+    padding-top: 4rem;
+  }
+
+  @media (max-width: 375px) {
+    padding-top: 3rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -17,6 +25,15 @@ export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    width: 95%;
+  }
+
+  @media (max-width: 375px) {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
 `;
 
 export const Header = styled.header`
@@ -49,6 +66,7 @@ export const Header = styled.header`
   }
 
   @media (max-width: 768px) {
+    margin-bottom: 4rem;
     h1 {
       font-size: 2.25rem;
     }
@@ -56,6 +74,42 @@ export const Header = styled.header`
     p {
       font-size: 1rem;
       line-height: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 3rem;
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    margin-bottom: 2.5rem;
+    h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.3rem;
     }
   }
 `;

@@ -25,3 +25,47 @@ export const useIsMobile = () => {
 
   return isMobile;
 };
+
+export const useIsSmallMobile = () => {
+  const pathname = usePathname();
+  const [isSmallMobile, setIsSmallMobile] = useState(isClient && window.innerWidth <= 480);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newIsSmallMobile = window.innerWidth <= 480;
+      setIsSmallMobile(newIsSmallMobile);
+    };
+
+    if (isClient) {
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [pathname]);
+
+  return isSmallMobile;
+};
+
+export const useIsVerySmallMobile = () => {
+  const pathname = usePathname();
+  const [isVerySmallMobile, setIsVerySmallMobile] = useState(isClient && window.innerWidth <= 375);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newIsVerySmallMobile = window.innerWidth <= 375;
+      setIsVerySmallMobile(newIsVerySmallMobile);
+    };
+
+    if (isClient) {
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [pathname]);
+
+  return isVerySmallMobile;
+};

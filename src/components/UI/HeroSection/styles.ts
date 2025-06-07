@@ -5,6 +5,14 @@ import { motion } from 'framer-motion';
 
 export const Wrapper = styled.section`
   margin-top: 6.25rem;
+
+  @media (max-width: 480px) {
+    margin-top: 5rem;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 4rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -42,6 +50,26 @@ export const Pill = styled.div`
     filter: none;
     vertical-align: middle;
   }
+
+  @media (max-width: 480px) {
+    padding: 0.25rem 0.5rem;
+    gap: 0.375rem;
+    margin-bottom: 0.75rem;
+
+    span {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.25rem 0.5rem;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const HeroTextContainer = styled.div`
@@ -51,6 +79,7 @@ export const HeroTextContainer = styled.div`
   padding-bottom: 2rem;
   max-width: 56rem;
   width: 100%;
+  padding: 0 1rem;
 
   h1 {
     font-size: 6rem;
@@ -78,6 +107,36 @@ export const HeroTextContainer = styled.div`
       line-height: 1.5rem;
     }
   }
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+    padding: 0 1rem 1rem;
+    h1 {
+      font-size: 2rem;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    gap: 0.5rem;
+    padding: 0 0.75rem 0.75rem;
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.3rem;
+    }
+  }
 `;
 
 export const HeroImageContainer = styled.div`
@@ -86,6 +145,21 @@ export const HeroImageContainer = styled.div`
   height: 500px;
   position: relative;
   overflow: visible;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    height: 350px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 1.5rem;
+    height: 280px;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 1rem;
+    height: 240px;
+  }
 
   /* Remove direct img styling here if CarouselImageItem handles it */
 `;
