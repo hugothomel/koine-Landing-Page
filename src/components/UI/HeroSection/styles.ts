@@ -4,6 +4,85 @@ import hero_background from '../../../../public/images/grid_background.png';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled.section`
+  /* margin-top: 6.25rem; Removed */
+
+  /* @media (max-width: 480px) {
+    margin-top: 5rem; Removed
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 4rem; Removed
+  } */
+`;
+
+export const Inner = styled.div`
+  background: var(--Background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const BackgroundBlur = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+`;
+
+export const EllipseBase = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(128px);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  opacity: 0.4;
+`;
+
+export const Ellipse1 = styled(EllipseBase)`
+  top: -15%;
+  left: 30%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 600px;
+  max-height: 600px;
+  opacity: 0.4;
+`;
+
+export const Ellipse2 = styled(EllipseBase)`
+  top: 20%;
+  right: -10%;
+  width: 30vw;
+  height: 30vw;
+  max-width: 400px;
+  max-height: 400px;
+  filter: blur(64px);
+  opacity: 0.3;
+`;
+
+export const Ellipse3 = styled(EllipseBase)`
+  bottom: -10%;
+  left: 10%;
+  width: 25vw;
+  height: 25vw;
+  max-width: 300px;
+  max-height: 300px;
+  filter: blur(32px);
+  opacity: 0.35;
+`;
+
+export const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 6.25rem;
 
   @media (max-width: 480px) {
@@ -13,18 +92,6 @@ export const Wrapper = styled.section`
   @media (max-width: 375px) {
     margin-top: 4rem;
   }
-`;
-
-export const Inner = styled.div`
-  background: url(${hero_background.src}) no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  margin: 0;
-  text-align: center;
-  background-position: top center;
-  background-size: contain;
 `;
 
 export const Pill = styled.div`
@@ -207,5 +274,83 @@ export const CarouselButton = styled.button`
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+`;
+
+export const Stats = styled.div`
+  margin: 4rem auto 2rem; /* Desktop: Was 6rem bottom, now 2rem */
+  width: 90%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 3rem auto 1.5rem; /* Mobile: Was 4rem bottom, now 1.5rem */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+  }
+`;
+
+export const Stat = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem; /* Adjusted gap */
+
+  h1 {
+    font-size: 4rem; /* Slightly reduced for Hero context */
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--link-color);
+    font-size: 1rem; /* Slightly reduced */
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  // Medium screens (e.g., iPad landscape)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
+
+  // Small screens (e.g., iPad portrait, phones)
+  @media (max-width: 768px) {
+    gap: 0.5rem; /* Adjusted gap for mobile */
+    h1 {
+      font-size: 2.5rem; /* Adjusted for Hero mobile */
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Desktop: Was 3rem */
+  margin-bottom: 4rem; /* Desktop: Was 3rem margin + 3rem padding */
+  /* padding-bottom: 3rem; Removed */
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem; /* Mobile: Was 2rem */
+    margin-bottom: 3rem; /* Mobile: Was 2rem margin + 2rem padding */
+    /* padding-bottom: 2rem; Removed */
   }
 `;

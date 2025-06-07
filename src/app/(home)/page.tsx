@@ -1,9 +1,6 @@
 import {
-  FAQ,
-  Featured,
-  FinancialFuture,
   HeroSection,
-  // IntroSection,
+  FAQ,
   JoinSection,
   GetStartedButton,
   WorkflowSection,
@@ -25,8 +22,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <FinancialFuture />
-      <CTASection />
       <ScrubbingSection />
       <CTASection />
       <WorkflowSection />

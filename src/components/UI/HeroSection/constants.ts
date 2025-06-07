@@ -25,3 +25,22 @@ export const mobileHeaderPhrase = [
   "can stop describing and",
   "start building.",
 ];
+
+export const stats = [
+  {
+    number: '15min',
+    subtitle: 'avg. prototype time',
+  },
+  {
+    number: '83%',
+    subtitle: 'of creatives use AI',
+  },
+  {
+    number: '60%',
+    subtitle: 'report tight deadlines',
+  },
+  {
+    number: '€50k',
+    subtitle: 'typical prototype cost',
+  },
+];
