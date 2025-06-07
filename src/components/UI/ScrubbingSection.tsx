@@ -96,26 +96,26 @@ if (typeof window !== 'undefined') {
 // Data for the scrubbing animation
 const slideData = [
   {
-    title: "AI-Powered Creation",
-    subtitle: "Intelligent Prototyping",
-    description: "Transform concepts into interactive prototypes at the speed of thought with our intelligent AI assistant.",
+    title: "Create prototypes from scratch",
+    subtitle: "",
+    description: "Transform concepts, screenshots or flows into interactive prototypes at the speed of thought",
     image: "/svgs/onboarding/onboarding_1.svg"
   },
   {
-    title: "Seamless Integration", 
-    subtitle: "Connected Workflows",
+    title: "Seamlessly connect your Figma or design system", 
+    subtitle: "",
     description: "Connect with Figma, Notion, Linear and other tools to create a unified workflow that accelerates innovation.",
     image: "/svgs/onboarding/onboarding_2.svg"
   },
   {
-    title: "Universal Access",
-    subtitle: "Breaking Barriers",
+    title: "Iterate on just a few clicks",
+    subtitle: "",
     description: "Break down barriers between disciplines. Whether you're a strategist, marketer, or founder - create without limits.",
     image: "/svgs/onboarding/onboarding_3.svg"
   },
   {
-    title: "Instant Collaboration",
-    subtitle: "Team Ready",
+    title: "Share your prototypes to align your teams",
+    subtitle: "",
     description: "Generate interactive prototypes with documentation and development tickets ready for your team to execute.",
     image: "/svgs/onboarding/onboarding_4.svg"
   }
