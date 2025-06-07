@@ -262,7 +262,7 @@ const ScrubbingSection = () => {
   const currentSlideData = slideData[currentSlide];
 
   return (
-    <Wrapper ref={sectionRef}>
+    <Wrapper id="scrubbing" ref={sectionRef}>
       <Inner>
         <TextContainer>
           <Title ref={titleRef}>{currentSlideData.title}</Title>

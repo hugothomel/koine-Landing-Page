@@ -57,12 +57,24 @@ const letterAnimationTwo = {
   },
 };
 
-const AnimatedLink = ({ title }: { title: string }) => {
+const AnimatedLink = ({ title, href }: { title: string; href?: string }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
+  const handleClick = () => {
+    if (href && href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'instant' });
+      }
+    }
+  };
+  
   return (
     <Div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
+      style={{ cursor: href ? 'pointer' : 'default' }}
     >
       <AnimatedWord
         title={title}

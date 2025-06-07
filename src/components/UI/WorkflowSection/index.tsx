@@ -24,7 +24,7 @@ const WorkflowSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <Wrapper>
+    <Wrapper id="workflow">
       <Inner>
         <Header>
           {isMobile ? (

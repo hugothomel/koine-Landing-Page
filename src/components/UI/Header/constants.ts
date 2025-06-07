@@ -22,15 +22,15 @@ export const menu = {
 };
 export const links = [
   {
-    url: '/',
+    url: '#scrubbing',
     linkTo: 'Platform',
   },
   {
-    url: '/',
+    url: '#workflow',
     linkTo: 'Integrations',
   },
   {
-    url: '/',
+    url: '#faq',
     linkTo: 'About',
   },
 ];
